@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5840c697f3694293b6fc2b2f8c4e99b4, type: 3}
+  m_Name: Plant1_Block
+  m_EditorClassIdentifier: 
+  <DamageType>k__BackingField: 0
+  <Damage>k__BackingField: 0
+  <Plant>k__BackingField: {fileID: 11400000, guid: fbe1be2a59fea954381c5d0c8aa4296b, type: 2}
+  <HarvestTime>k__BackingField: 10
+  <HarvestQuantity>k__BackingField: 2
