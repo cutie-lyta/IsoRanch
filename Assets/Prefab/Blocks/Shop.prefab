@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5406519980965434987}
   m_Layer: 0
   m_Name: Shop
-  m_TagString: Standable
+  m_TagString: Selectionable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4147406077293886490}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4147406077293886490}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -2432090755550338912, guid: 22ba29cf733f0714292dd8763a117107, type: 3}
 --- !u!23 &6431922449180441913
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -120,4 +120,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fb962c116e43a345b512a2cb50ea846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Data>k__BackingField: {fileID: 11400000, guid: dcc5ab4372ba6e3468c0fb5f7ecdf716, type: 2}
   _shop: {fileID: 0}

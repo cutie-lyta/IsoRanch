@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2871177635900042234}
   m_Layer: 0
   m_Name: Seller
-  m_TagString: Standable
+  m_TagString: Selectionable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3908941499510017399}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -2432090755550338912, guid: 6e275b2305792574fb62cdd6fd61fb04, type: 3}
 --- !u!23 &8635017926153471036
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8ddcab71bedbec5419274099a730fcbb, type: 2}
+  - {fileID: 2100000, guid: 79d4439941d335b47a3a8e60171bbef3, type: 2}
   - {fileID: 2100000, guid: 029e0d384dd524c43b4bde30db97ff5f, type: 2}
   - {fileID: 2100000, guid: 35e413ff837f54247a3fbcffdec3ed5b, type: 2}
   m_StaticBatchInfo:
@@ -120,3 +120,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aed13b65ba9a2e4fa8c0ac41ffafceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Data>k__BackingField: {fileID: 11400000, guid: 0cb4ed9ff6016d14dac1fe1da8b18d3f, type: 2}

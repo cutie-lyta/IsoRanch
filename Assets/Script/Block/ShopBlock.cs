@@ -9,10 +9,17 @@ public class ShopBlock : Block
     [SerializeField]
     private Shop _shop;
 
+    private PlayerInput _input;
+
     /// <inheritdoc />
-    protected override void Action(ActionContext ctx)
+    public override void Action(ActionContext ctx)
     {
         _shop.gameObject.SetActive(true);
-        PlayerMain.Instance.GetComponent<PlayerInput>().enabled = false;
+        _input.enabled = false;
+    }
+
+    private void Start()
+    {
+        _input = PlayerMain.Instance.GetComponent<PlayerInput>();
     }
 }

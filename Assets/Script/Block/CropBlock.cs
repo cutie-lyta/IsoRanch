@@ -1,7 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// A seed block that'll grow.
+/// </summary>
 public class CropBlock : Block
 {
     [SerializeField]
@@ -10,9 +12,12 @@ public class CropBlock : Block
     [SerializeField]
     private PlantBlockData _blockData;
 
-    // Start is called before the first frame update
+    private PlowedDirt _parent;
+
     private void Start()
     {
+        _parent = this.transform.parent.GetComponent<PlowedDirt>();
+
         StartCoroutine(Grow());
     }
 
@@ -20,8 +25,8 @@ public class CropBlock : Block
     {
         yield return new WaitForSeconds(_blockData.HarvestTime);
         var finishedPlant = Instantiate(_finalPrefab, this.transform.position, this.transform.rotation);
-        finishedPlant.GetComponent<PlantBlock>().SetBlockData(_blockData);
         finishedPlant.transform.SetParent(this.transform.parent);
+        _parent.Plant = finishedPlant;
         Destroy(this.gameObject);
     }
 }

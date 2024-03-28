@@ -6,11 +6,11 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerInputHandler))]
 [RequireComponent(typeof(InventoryManager))]
 [RequireComponent(typeof(PlayerSelector))]
+[RequireComponent(typeof(PlayerSelectorGraphics))]
+[RequireComponent(typeof(PlayerDeath))]
+[RequireComponent(typeof(PlayerHealth))]
 public class PlayerMain : MonoBehaviour
 {
-    private PlayerHarvest _harvest;
-    private PlayerMovement _movement;
-
     public static PlayerMain Instance { get; set; }
 
     public InventoryManager Inventory { get; set; }
@@ -20,6 +20,8 @@ public class PlayerMain : MonoBehaviour
     public PlayerMoney Money { get; set; }
 
     public PlayerSelector Selector { get; set; }
+
+    public PlayerHealth Health { get; set; }
 
     private void Awake()
     {
@@ -34,9 +36,7 @@ public class PlayerMain : MonoBehaviour
         InputHandler = GetComponent<PlayerInputHandler>();
         Money = GetComponent<PlayerMoney>();
         Selector = GetComponent<PlayerSelector>();
-
-        _harvest = GetComponent<PlayerHarvest>();
-        _movement = GetComponent<PlayerMovement>();
+        Health = GetComponent<PlayerHealth>();
     }
 
     private void OnDestroy()

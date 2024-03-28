@@ -4,11 +4,17 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
+/// <summary>
+/// The shop class, used to control the shop UI
+/// This script has nothing to do with the shop block and can be used standalone.
+/// </summary>
 public class Shop : MonoBehaviour
 {
+    [Tooltip("The list of every items that the shop sells.")]
     [SerializeField]
     private List<ItemData> _items;
 
+    [Tooltip("The prefab of one item in the menu, being instantiated for every item in the list above.")]
     [SerializeField]
     private GameObject _menuItem;
 
@@ -33,7 +39,7 @@ public class Shop : MonoBehaviour
         foreach (var item in _items)
         {
             var button = Instantiate(_menuItem, uiGrid.transform, false);
-            button.GetComponent<Button>().onClick.AddListener(() => BuyItem(item.Id));
+            button.GetComponent<Button>().onClick.AddListener(() => BuyItem(item));
 
             var image = button.transform.GetChild(0).GetComponent<Image>();
             image.sprite = item.Sprite;
@@ -56,9 +62,13 @@ public class Shop : MonoBehaviour
         uiGrid.GetComponentInChildren<Button>().Select();
     }
 
-    private void BuyItem(int itemId)
+    /// <summary>
+    /// Put an item in the Player's inventory and take his money
+    /// </summary>
+    /// <param name="item"> The item given to the player </param>
+    private void BuyItem(ItemData item)
     {
-        var data = _items[itemId];
+        var data = _items[_items.IndexOf(item)];
         if (PlayerMain.Instance.Money.TakeMoney(data.BuyingPrice))
         {
             if (!PlayerMain.Instance.Inventory.AddItem(data))

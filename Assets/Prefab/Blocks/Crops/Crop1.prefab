@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 4206170757659212694}
   - component: {fileID: 7055824395618992710}
   - component: {fileID: 1589708300755636304}
+  - component: {fileID: 8474690727696733717}
   m_Layer: 0
   m_Name: Crop1
-  m_TagString: Untagged
+  m_TagString: Selectionable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,5 +99,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08805f00e55eb944a9b3e06700a3be2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Data>k__BackingField: {fileID: 11400000, guid: 08475df8f8863d84eb6965dddf1e495d, type: 2}
   _finalPrefab: {fileID: 102237908506553756, guid: 3bd1fead03f072d4a86a0b28dea967b6, type: 3}
   _blockData: {fileID: 11400000, guid: c2f41b7c10c9d4a4fb7064138e29e4ca, type: 2}
+--- !u!65 &8474690727696733717
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6657126777120194591}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}

@@ -5,22 +5,24 @@ using UnityEngine;
 /// </summary>
 public class PlowedDirt : Block
 {
+    public GameObject Plant { get; set; }
+
     /// <inheritdoc />
-    protected override void Action(ActionContext ctx)
+    public override void Action(ActionContext ctx)
     {
         var seed = ctx.HeldInHand as SeedData;
-        if (seed && this.transform.childCount == 0)
+        if (seed && Plant == null)
         {
             PlayerMain.Instance.Inventory.RemoveItem(seed);
 
-            Instantiate(seed.Crop, this.transform.position + Vector3.up, this.transform.rotation)
-                .transform.SetParent(this.transform);
+            Plant = Instantiate(seed.Crop, this.transform.position + Vector3.up, this.transform.rotation);
+            Plant.transform.SetParent(this.transform);
         }
         else
         {
-            if (this.transform.childCount == 1)
+            if (Plant != null)
             {
-                this.transform.GetChild(0).SendMessage("Action", ctx);
+                Plant.GetComponent<Block>().Action(ctx);
             }
         }
     }

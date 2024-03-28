@@ -7,8 +7,18 @@
 [Serializable]
 public enum FoodType
 {
+    /// <summary>
+    /// Represents a fruit
+    /// </summary>
     Fruit,
-    Vegetable,
-    Poisonous
-}
 
+    /// <summary>
+    /// Represents a vegetable.
+    /// </summary>
+    Vegetable,
+
+    /// <summary>
+    /// Represents a poisonous plant.
+    /// </summary>
+    Poisonous,
+}

@@ -11,23 +11,23 @@ public class PlayerMoney : MonoBehaviour
 
     private int _money;
 
-    public bool AddMoney(int amount)
+    [SerializeField]
+    private bool _cheatMode;
+
+    public void AddMoney(int amount)
     {
         if (_money < _limit)
         {
             _money += amount;
             _moneyUI.text = "$" + _money;
-            return true;
         }
-
-        return false;
     }
 
     public bool TakeMoney(int amount)
     {
-        if (_money - amount > 0)
+        if ((_cheatMode ? 0 : (_money - amount)) >= 0)
         {
-            _money -= amount;
+            _money -= _cheatMode ? 0 : amount;
             _moneyUI.text = "$" + _money;
             return true;
         }
@@ -41,5 +41,10 @@ public class PlayerMoney : MonoBehaviour
         _money = 500;
 
         _moneyUI.text = "$" + _money;
+    }
+
+    private void SetCheatMode()
+    {
+        _cheatMode = !_cheatMode;
     }
 }

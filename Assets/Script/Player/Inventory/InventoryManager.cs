@@ -9,11 +9,7 @@ public class InventoryManager : MonoBehaviour
     private Dictionary<ItemData, int> _inventory = new ();
 
     private InventorySelection _selection;
-
-    private void Awake()
-    {
-        _selection = GetComponent<InventorySelection>();
-    }
+    private InventoryTextManager _textManager;
 
     public bool AddItem(ItemData item, int amount = 1)
     {
@@ -29,11 +25,15 @@ public class InventoryManager : MonoBehaviour
         }
 
         _inventory.Add(item, amount);
+        if (GetHeldItem() == item)
+        {
+            _textManager.ChangeInventory();
+        }
 
         return true;
     }
 
-    public bool RemoveItem(ItemData item, int amount = 1)
+    public void RemoveItem(ItemData item, int amount = 1)
     {
         if (_inventory.ContainsKey(item))
         {
@@ -43,11 +43,7 @@ public class InventoryManager : MonoBehaviour
             {
                 _inventory.Remove(item);
             }
-
-            return true;
         }
-
-        return false;
     }
 
     public int GetItemAmount(ItemData item)
@@ -68,5 +64,11 @@ public class InventoryManager : MonoBehaviour
         }
 
         return null;
+    }
+
+    private void Awake()
+    {
+        _selection = GetComponent<InventorySelection>();
+        _textManager = GetComponent<InventoryTextManager>();
     }
 }

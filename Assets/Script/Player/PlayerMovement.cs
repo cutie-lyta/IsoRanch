@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
         _main.InputHandler.Movement += OnMovement;
 
         _dir = Vector3.zero;
+
         _rb = GetComponent<Rigidbody>();
     }
 

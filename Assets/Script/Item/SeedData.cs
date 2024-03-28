@@ -1,14 +1,13 @@
 using UnityEngine;
 
 /// <summary>
-/// Data that all items abide to
-/// Can be derived to have a more option.
+/// Data for a seed item, that can be placed on a Plowed Dirt block.
 /// </summary>
 [CreateAssetMenu(fileName = "Seed1", menuName = "IsoRanch/Item/Seed")]
 public class SeedData : ItemData
 {
     /// <summary>
-    /// The crop GameObject
+    /// Gets the crop GameObject
     /// </summary>
     [field: SerializeField]
     public GameObject Crop { get; private set; }

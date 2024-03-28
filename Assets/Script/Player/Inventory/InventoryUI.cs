@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
 {
+    private readonly List<TMP_Text> _texts = new ();
+    private readonly List<Image> _imgs = new ();
+
     [field: SerializeField]
     public GameObject InventoryPanel { get; private set; }
-
-    private List<TMP_Text> _texts = new ();
-    private List<Image> _imgs = new ();
 
     private void Awake()
     {
