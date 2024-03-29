@@ -43,6 +43,7 @@ public class SellBlock : Block
     protected override void Awake()
     {
         _renderer = GetComponent<MeshRenderer>();
+        base.Awake();
     }
 
     /// <summary>

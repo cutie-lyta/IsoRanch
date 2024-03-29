@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e823a30f8f2c49a496c753ce71b9df0a, type: 3}
+  m_Name: PlacedDirtBlock
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Plowed Land
+  <Description>k__BackingField: You can plant seed on this block
+  <Item>k__BackingField: {fileID: 11400000, guid: 8de36f8b8b21b824e86f902618ea91cf, type: 2}

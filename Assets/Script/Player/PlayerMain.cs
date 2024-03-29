@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Component and Singleton that connect all of the player together
+/// </summary>
 [RequireComponent(typeof(PlayerMovement))]
 [RequireComponent(typeof(PlayerHarvest))]
 [RequireComponent(typeof(PlayerMoney))]
@@ -9,19 +12,42 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerSelectorGraphics))]
 [RequireComponent(typeof(PlayerDeath))]
 [RequireComponent(typeof(PlayerHealth))]
+[RequireComponent(typeof(SoundModule))]
 public class PlayerMain : MonoBehaviour
 {
-    public static PlayerMain Instance { get; set; }
+    /// <summary>
+    /// Gets the static handle to itself.
+    /// </summary>
+    public static PlayerMain Instance { get; private set; }
 
-    public InventoryManager Inventory { get; set; }
+    /// <summary>
+    /// Gets the handle to the Inventory manager.
+    /// </summary>
+    public InventoryManager Inventory { get; private set; }
 
-    public PlayerInputHandler InputHandler { get; set; }
+    /// <summary>
+    /// Gets the handle to the input handler
+    /// </summary>
+    public PlayerInputHandler InputHandler { get; private set; }
 
-    public PlayerMoney Money { get; set; }
+    /// <summary>
+    /// Gets the handle to the Money manager.
+    /// </summary>
+    public PlayerMoney Money { get; private set; }
 
-    public PlayerSelector Selector { get; set; }
+    /// <summary>
+    /// Gets the handle to the Selected blocks
+    /// </summary>
+    public PlayerSelector Selector { get; private set; }
 
-    public PlayerHealth Health { get; set; }
+    /// <summary>
+    /// Gets the handle to the health.
+    /// </summary>
+    public PlayerHealth Health { get; private set; }
+
+    public SoundModule SoundModule { get; private set; }
+
+    public PlaceableItemBehaviour Placer { get; private set; }
 
     private void Awake()
     {
@@ -37,6 +63,8 @@ public class PlayerMain : MonoBehaviour
         Money = GetComponent<PlayerMoney>();
         Selector = GetComponent<PlayerSelector>();
         Health = GetComponent<PlayerHealth>();
+        SoundModule = GetComponent<SoundModule>();
+        Placer = GetComponent<PlaceableItemBehaviour>();
     }
 
     private void OnDestroy()

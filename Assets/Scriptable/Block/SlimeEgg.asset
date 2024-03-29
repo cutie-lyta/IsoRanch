@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37f362bed53cd3f41a40b588b6777ffb, type: 3}
+  m_Name: SlimeEgg
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Slime Egg
+  <Description>k__BackingField: A beautiful slime will hatch out of it any seconds
+    now
+  <Animal>k__BackingField: {fileID: 3516139105956082216, guid: 421e598fa0fd80f47ad67d122b5e45ca, type: 3}
+  <HatchTime>k__BackingField: 10
+  <HatchQuantity>k__BackingField: 1

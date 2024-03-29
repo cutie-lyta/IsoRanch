@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// The graphics for PlayerSelector.
+/// </summary>
 public class PlayerSelectorGraphics : MonoBehaviour
 {
     private PlayerSelector _selector;
@@ -15,6 +18,9 @@ public class PlayerSelectorGraphics : MonoBehaviour
         StandingOutline();
     }
 
+    /// <summary>
+    /// Show to the player the object that the user can act on.
+    /// </summary>
     private void UseOutline()
     {
         float rad = Math.QuantizeAngle(transform.rotation.eulerAngles.y, 4) * Mathf.PI / 180.0f;
@@ -51,6 +57,9 @@ public class PlayerSelectorGraphics : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Show to the player the object that the user stands on.
+    /// </summary>
     private void StandingOutline()
     {
         Debug.DrawRay(transform.position, Vector3.down * 10, Color.yellow, 0.1f);

@@ -1,11 +1,18 @@
 using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// Component that take care of the player's death and respawning behaviour.
+/// </summary>
 public class PlayerDeath : MonoBehaviour
 {
     private Vector3 _spawnpoint;
     private PlayerHealth _health;
 
+    /// <summary>
+    /// Die : Empty inventory, Take money and respawn.
+    /// </summary>
+    /// <returns> IEnumerator -> The coroutine wait and stuff. </returns>
     public IEnumerator Die()
     {
         // Show screen
@@ -22,10 +29,14 @@ public class PlayerDeath : MonoBehaviour
 
         _health.AddHealth(20);
         this.transform.position = _spawnpoint;
-
-        Time.timeScale = 1;
     }
 
+    /// <summary>
+    /// Collide with death plane
+    /// </summary>
+    /// <param name="other"> if the tag of other is Respawn =>
+    /// take an ABYSMAL amount of damage, effectively killing the player.
+    /// </param>
     private void OnCollisionEnter(Collision other)
     {
         // Check death plain

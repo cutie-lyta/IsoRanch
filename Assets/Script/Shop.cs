@@ -18,6 +18,8 @@ public class Shop : MonoBehaviour
     [SerializeField]
     private GameObject _menuItem;
 
+    private RectTransform _oldRect;
+
     /// <summary>
     /// Hide the shop when the exit button is pressed.
     /// </summary>
@@ -30,6 +32,41 @@ public class Shop : MonoBehaviour
         PlayerMain.Instance.GetComponent<PlayerInput>().enabled = true;
     }
 
+    // Source : https://discussions.unity.com/t/auto-scroll-to-selected-button-in-grid-when-outside-viewport/246277
+    public void SnapTo(RectTransform target)
+    {
+        var uiGrid = GetComponentInChildren<GridLayoutGroup>();
+
+        RectTransform rect = target.gameObject.GetComponent<RectTransform>();
+
+        Vector2 v = rect.position;
+        bool inView = RectTransformUtility.RectangleContainsScreenPoint(uiGrid.transform.parent.GetComponent<RectTransform>(), v);
+
+        float incrimentSize = rect.rect.height;
+
+        if (!inView)
+        {
+            if (_oldRect != null)
+            {
+                if (_oldRect.localPosition.y < rect.localPosition.y)
+                {
+                    uiGrid.GetComponent<RectTransform>().anchoredPosition += new Vector2(0, -incrimentSize);
+                }
+                else if (_oldRect.localPosition.y > rect.localPosition.y)
+                {
+                    uiGrid.GetComponent<RectTransform>().anchoredPosition += new Vector2(0, incrimentSize);
+                }
+            }
+        }
+
+        _oldRect = rect;
+    }
+
+    private void OnSelected(GameObject callee)
+    {
+        SnapTo(callee.GetComponent<RectTransform>());
+    }
+
     private void Start()
     {
         var uiGrid = GetComponentInChildren<GridLayoutGroup>();
@@ -39,7 +76,9 @@ public class Shop : MonoBehaviour
         foreach (var item in _items)
         {
             var button = Instantiate(_menuItem, uiGrid.transform, false);
-            button.GetComponent<Button>().onClick.AddListener(() => BuyItem(item));
+            var buttonComponent = button.GetComponent<ShopButtonBehaviour>();
+            buttonComponent.onClick.AddListener(() => BuyItem(item));
+            buttonComponent.OnSelectEvent += () => OnSelected(buttonComponent.gameObject);
 
             var image = button.transform.GetChild(0).GetComponent<Image>();
             image.sprite = item.Sprite;
@@ -47,7 +86,7 @@ public class Shop : MonoBehaviour
             var nameText = button.transform.GetChild(1);
             var priceText = button.transform.GetChild(2);
 
-            nameText.GetComponent<TMP_Text>().text = item.name;
+            nameText.GetComponent<TMP_Text>().text = item.Name;
             priceText.GetComponent<TMP_Text>().text = "$" + item.BuyingPrice;
 
             var rectTrans = uiGrid.GetComponent<RectTransform>();

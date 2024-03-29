@@ -13,6 +13,7 @@ public class PlantBlock : Block
     public override void Action(ActionContext ctx)
     {
         PlayerMain.Instance.Inventory.AddItem(_blockData.Plant, _blockData.HarvestQuantity);
+        PlayerMain.Instance.SoundModule.Play("harvest");
         Destroy(this.gameObject);
     }
 

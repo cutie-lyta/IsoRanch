@@ -1,6 +1,11 @@
 ﻿using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// The What Am I Looking At component
+/// A component that show the name (and description) of what the Player is looking at.
+/// Inspired by the Minecraft mod of the same name, and Slime Rancher's similar functionality
+/// </summary>
 public class WhatAmILookingAt : MonoBehaviour
 {
     [SerializeField]

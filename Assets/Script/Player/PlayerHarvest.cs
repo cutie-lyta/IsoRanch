@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/// <summary>
+/// Component that let the player act, so effectively harvest.
+/// </summary>
 public class PlayerHarvest : MonoBehaviour
 {
     private PlayerMain _main;
@@ -13,6 +16,11 @@ public class PlayerHarvest : MonoBehaviour
         _placeable = GetComponent<PlaceableItemBehaviour>();
     }
 
+    /// <summary>
+    /// The action input, call Action on the selected block if it is interactive,
+    /// else try to place down what you have in hand
+    /// </summary>
+    /// <param name="obj"> The input context. </param>
     private void OnAction(InputAction.CallbackContext obj)
     {
         if (obj.performed)

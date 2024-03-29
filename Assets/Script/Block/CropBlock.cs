@@ -17,6 +17,7 @@ public class CropBlock : Block
     private void Start()
     {
         _parent = this.transform.parent.GetComponent<PlowedDirt>();
+        GetComponent<SoundModule>().Play("plant");
 
         StartCoroutine(Grow());
     }

@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/// <summary>
+/// Component that let the player move.
+/// </summary>
 [RequireComponent(typeof(PlayerMovement))]
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
@@ -22,6 +25,9 @@ public class PlayerMovement : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
     }
 
+    /// <summary>
+    /// Move towards _dir -> it's Vector3.zero if no input is touched.
+    /// </summary>
     private void FixedUpdate()
     {
         _rb.MovePosition(_rb.position + (_dir * (_speed * Time.fixedDeltaTime)));
@@ -31,6 +37,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Change _dir according to the input
+    /// </summary>
+    /// <param name="obj"> The input context - Contains the directional vector </param>
     private void OnMovement(InputAction.CallbackContext obj)
     {
         var value = obj.ReadValue<Vector2>();

@@ -25,6 +25,7 @@ public class BreakableBlock : Block
 
         if (PlayerMain.Instance.Inventory.AddItem(data.Item))
         {
+            PlayerMain.Instance.SoundModule.Play("break");
             Destroy(this.gameObject);
         }
     }

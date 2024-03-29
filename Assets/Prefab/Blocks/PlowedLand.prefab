@@ -120,5 +120,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c9cdcf0120e7354a816699e4be40861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Data>k__BackingField: {fileID: 11400000, guid: 7a4c9415f6d7a2d4dbe2f5e4a8aa70d3, type: 2}
-  Plant: {fileID: 0}
+  <Data>k__BackingField: {fileID: 11400000, guid: 6bc739a5677178a499ef8be2881266ee, type: 2}
