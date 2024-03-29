@@ -1,0 +1,55 @@
+Ajout :
+ 
+Personnage controllable (Iso caméra fixe) :
+	- Déplacement (ZQSD ou Left Thumbstick)
+	- Saut (Space ou A)
+	- Interaction et pose (Right Shift ou Right Trigger)
+	- Récuperation de bloc (Left Shift ou Left Trigger)
+
+Inventaire : 
+	- Popup
+	- Mulitple slot
+	- Variable : nbr de type d'objet max
+
+Systeme d'item : 
+	- Differents type d'item.
+	- Bloc réagis au item si il le faut.
+
+Systeme de bloc : 
+	- Placement de certains bloc
+	- Destruction/récuperation de certains bloc
+	- Bloc avec des comportement unique
+
+Systeme d'entité : 
+	- Animaux:
+		- Nourissable
+		- Drop unique
+		- Mange seulement un type de nourriture
+		- Nourriture favorite.
+
+Systeme de ventes :
+	Ventes d'objet qui ne sont pas des plantes
+	Vente en bulk.
+
+
+Liste des blocs : 
+	Stone -> Bloc de construction primitif, ne fait rien, peut etre récuperer si placé
+	Plowed Dirt -> Bloc champ, on peux planter dessus, peut etre récuperer si placé et qu'aucune plante n'est dessus
+	Fence -> Une barriere pour les animaux mais pas pour le joueur. Peut etre récuperer.
+	Shop -> Ouvre le shop.
+	Selling Module -> Vends l'item dans la main actuellement. Si le selling module est en mode rouge, il vends qu'un exemplaire, sinon, si 			il est en mode bleu, il vends tout en bulk. Pour changer de mode, il faut interagir avec les main vide.
+	Slime egg -> Spawn un slime au bout d'un moment
+	Carrot seed -> Spawn une carotte au bout d'un certain temps
+	carrot -> Plante qui peut etre ramasser
+
+Liste des items : 
+	Carrot Seed -> Quand planter, vas faire pousser une carotte. S'acheter $10 et se vends $5
+	Carrot -> Aliment de type Vegetable qui peut etre donner au slime. Se vends $20.
+	Slime Egg -> Quand poser, vas faire eclore un slime. S'achete $200 et se vends $50
+	Fence -> Une barriere qui peut etre poser. S'achete $50 et se vends $10
+	Ruby -> Drop du slime, après être nourris. Se vends $100
+	Stone -> Un bloc de Pierre qui peut etre poser. S'acheter $35 et se vends $2
+	Dirt -> Un bloc de Terre. S'acheter $40 et se vends $5
+
+Liste des entité : 
+	Slime -> Un animal qui 
