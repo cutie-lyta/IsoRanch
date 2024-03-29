@@ -6,15 +6,23 @@ using UnityEngine;
 /// </summary>
 public class EggBlock : Block
 {
+    /// <summary>
+    /// A cast of this block's data as a Egg block data being stored.
+    /// </summary>
     private EggBlockData _blockData;
 
     protected override void Awake()
     {
         _blockData = Data as EggBlockData;
-        StartCoroutine(Grow());
+        StartCoroutine(Hatch());
     }
 
-    private IEnumerator Grow()
+    /// <summary>
+    /// Coroutine used to make the egg hatch
+    /// The entity is placed slightly (and randomly) offset around the egg
+    /// And rotated randomly.
+    /// </summary>
+    private IEnumerator Hatch()
     {
         yield return new WaitForSeconds(_blockData.HatchTime);
 

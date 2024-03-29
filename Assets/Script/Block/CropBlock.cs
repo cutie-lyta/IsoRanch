@@ -6,12 +6,21 @@ using UnityEngine;
 /// </summary>
 public class CropBlock : Block
 {
+    /// <summary>
+    /// The prefab of the final plant state.
+    /// </summary>
     [SerializeField]
     private GameObject _finalPrefab;
 
+    /// <summary>
+    /// Store the data of the future plant.
+    /// </summary>
     [SerializeField]
     private PlantBlockData _blockData;
 
+    /// <summary>
+    /// A handle to the parent dirt block.
+    /// </summary>
     private PlowedDirt _parent;
 
     private void Start()

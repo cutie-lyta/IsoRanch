@@ -1,8 +1,24 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This component is made to manage audio on a GameObject.
+/// </summary>
 public class SoundModule : MonoBehaviour
 {
+    /// <summary>
+    /// Dictionary containing an Audio associated to a string.
+    /// </summary>
+    [SerializeField]
+    private SerializedDictionnary<string, Audio> _sounds;
+
+    private AudioSource _source;
+    private int _currentPriority;
+
+    /// <summary>
+    /// Definition of a sound.
+    /// </summary>
     [Serializable]
     private struct Audio
     {
@@ -15,12 +31,11 @@ public class SoundModule : MonoBehaviour
         public float Volume;
     }
 
-    [SerializeField]
-    private SerializedDictionnary<string, Audio> _sounds;
-
-    private AudioSource _source;
-    private int _currentPriority;
-
+    /// <summary>
+    /// Play a sound effect in the dictionary
+    /// </summary>
+    /// <param name="soundEffect"> The name of the sound effect. </param>
+    /// <param name="priority"> An override to the default priority of the sound, if wanted. </param>
     public void Play(string soundEffect, int priority = -1)
     {
         if (priority == -1)
@@ -40,6 +55,5 @@ public class SoundModule : MonoBehaviour
     private void Awake()
     {
         _source = gameObject.AddComponent<AudioSource>();
-
     }
 }

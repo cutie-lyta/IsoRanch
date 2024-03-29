@@ -5,6 +5,9 @@
 /// </summary>
 public abstract class Block : Selectable
 {
+    /// <summary>
+    /// Gets the data of a block placed.
+    /// </summary>
     [field: SerializeField]
     public BlockData Data { get; private set; }
 

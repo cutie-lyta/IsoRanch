@@ -8,12 +8,25 @@ using UnityEngine.UI;
 /// </summary>
 public class InventoryUI : MonoBehaviour
 {
+    /// <summary>
+    /// List of text component of the inventory bar, being populated on awake
+    /// </summary>
     private readonly List<TMP_Text> _texts = new ();
+
+    /// <summary>
+    /// List of image component of the inventory bar, being populated on awake
+    /// </summary>
     private readonly List<Image> _imgs = new ();
 
+    /// <summary>
+    /// The inventory panel.
+    /// </summary>
     [SerializeField]
     private GameObject _inventoryPanel;
 
+    /// <summary>
+    /// An handle to the inventory selection component.
+    /// </summary>
     private InventorySelection _selection;
 
     private void Awake()

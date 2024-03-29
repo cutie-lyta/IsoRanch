@@ -4,7 +4,7 @@
 public struct ActionContext
 {
     /// <summary>
-    /// The object being held by the Player when acting.
+    /// Gets or sets the object being held by the Player when acting.
     /// </summary>
-    public ItemData HeldInHand;
+    public ItemData HeldInHand { get; set; }
 }

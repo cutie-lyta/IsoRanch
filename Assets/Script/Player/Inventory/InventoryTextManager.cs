@@ -7,11 +7,21 @@ using UnityEngine;
 /// </summary>
 public class InventoryTextManager : MonoBehaviour
 {
+    /// <summary>
+    /// Item name text box.
+    /// </summary>
     [SerializeField]
     private TMP_Text _text;
 
+    /// <summary>
+    /// DoTween sequence getting stored.
+    /// </summary>
     private Sequence _curSeq;
 
+    /// <summary>
+    /// Function being call when the current inventory item changes
+    /// To do the text fade in/out effect.
+    /// </summary>
     public void ChangeInventory()
     {
         if (PlayerMain.Instance.Inventory.GetHeldItem() != null)
@@ -33,9 +43,10 @@ public class InventoryTextManager : MonoBehaviour
         }
     }
 
-    private void Awake()
+    private void Start()
     {
         _text.color = new Color(1, 1, 1, 0.0f);
         _curSeq = DOTween.Sequence();
+        PlayerMain.Instance.Inventory.OnSelectionChange += ChangeInventory;
     }
 }

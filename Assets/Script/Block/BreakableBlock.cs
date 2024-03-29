@@ -9,7 +9,7 @@ public class BreakableBlock : Block
     /// Take back the block if empty handed or holding itself already.
     /// </summary>
     /// <param name="ctx"> The context, including the Held Item. </param>
-    public override void Action(ActionContext ctx)
+    public virtual void Break(ActionContext ctx)
     {
         var data = this.Data as BreakableBlockData;
 

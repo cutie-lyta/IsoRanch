@@ -32,17 +32,22 @@ public class Shop : MonoBehaviour
         PlayerMain.Instance.GetComponent<PlayerInput>().enabled = true;
     }
 
-    // Source : https://discussions.unity.com/t/auto-scroll-to-selected-button-in-grid-when-outside-viewport/246277
-    public void SnapTo(RectTransform target)
+    /// <summary>
+    /// Snap self to the current position.
+    /// </summary>
+    /// <param name="target"> The target rect. </param>
+    /// Source :
+    /// https://discussions.unity.com/t/auto-scroll-to-selected-button-in-grid-when-outside-viewport/246277
+    private void SnapTo(RectTransform target)
     {
         var uiGrid = GetComponentInChildren<GridLayoutGroup>();
 
-        RectTransform rect = target.gameObject.GetComponent<RectTransform>();
+        RectTransform rect = target;
 
         Vector2 v = rect.position;
         bool inView = RectTransformUtility.RectangleContainsScreenPoint(uiGrid.transform.parent.GetComponent<RectTransform>(), v);
 
-        float incrimentSize = rect.rect.height;
+        float incrementSize = rect.rect.height;
 
         if (!inView)
         {
@@ -50,17 +55,18 @@ public class Shop : MonoBehaviour
             {
                 if (_oldRect.localPosition.y < rect.localPosition.y)
                 {
-                    uiGrid.GetComponent<RectTransform>().anchoredPosition += new Vector2(0, -incrimentSize);
+                    uiGrid.GetComponent<RectTransform>().anchoredPosition += new Vector2(0, -incrementSize);
                 }
                 else if (_oldRect.localPosition.y > rect.localPosition.y)
                 {
-                    uiGrid.GetComponent<RectTransform>().anchoredPosition += new Vector2(0, incrimentSize);
+                    uiGrid.GetComponent<RectTransform>().anchoredPosition += new Vector2(0, incrementSize);
                 }
             }
         }
 
         _oldRect = rect;
     }
+
 
     private void OnSelected(GameObject callee)
     {

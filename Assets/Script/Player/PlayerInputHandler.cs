@@ -8,12 +8,29 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(PlayerInput))]
 public class PlayerInputHandler : MonoBehaviour
 {
+    /// <summary>
+    /// Event called when movement buttons are pressed
+    /// </summary>
     public event Action<InputAction.CallbackContext> Movement;
 
+    /// <summary>
+    /// Event called when the action button is pressed
+    /// </summary>
     public event Action<InputAction.CallbackContext> Action;
 
+    /// <summary>
+    /// Event called when the break button is pressed
+    /// </summary>
+    public event Action<InputAction.CallbackContext> Break;
+
+    /// <summary>
+    /// Event called when the jump button is pressed
+    /// </summary>
     public event Action<InputAction.CallbackContext> Jump;
 
+    /// <summary>
+    /// Event called when inventory navigation buttons are pressed
+    /// </summary>
     public event Action<InputAction.CallbackContext> InventoryNavigation;
 
     private void Start()
@@ -41,6 +58,9 @@ public class PlayerInputHandler : MonoBehaviour
                 break;
             case "Jump":
                 Jump?.Invoke(ctx);
+                break;
+            case "Break":
+                Break?.Invoke(ctx);
                 break;
         }
     }

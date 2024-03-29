@@ -203,8 +203,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sounds:
     _elements:
-    - Key: eat
-      Value:
+    - <Key>k__BackingField: eat
+      <Value>k__BackingField:
         Clip: {fileID: 8300000, guid: 451528f4a98012946838585148f51be7, type: 3}
-        Priority: 10
-        Volume: 0.256
+        Priority: 12
+        Volume: 0.424

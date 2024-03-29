@@ -5,6 +5,9 @@
 /// </summary>
 public class PlayerSelectorGraphics : MonoBehaviour
 {
+    /// <summary>
+    /// An handle to the player selector. The logical counterpart of this script.
+    /// </summary>
     private PlayerSelector _selector;
 
     private void Awake()
@@ -68,7 +71,7 @@ public class PlayerSelectorGraphics : MonoBehaviour
             if (hit.transform.CompareTag("Selectionable") &&
                 (_selector.CurrentStandingBlock == null || _selector.CurrentStandingBlock.gameObject != hit.transform.gameObject))
             {
-                ActionContext context;
+                ActionContext context = default;
                 context.HeldInHand = PlayerMain.Instance.Inventory.GetHeldItem();
 
                 if (_selector.CurrentStandingBlock)

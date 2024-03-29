@@ -5,6 +5,9 @@ using UnityEngine;
 /// </summary>
 public class PlowedDirt : Block
 {
+    /// <summary>
+    /// Gets and sets the current plant being stored on that block.
+    /// </summary>
     public GameObject Plant { get; set; }
 
     /// <inheritdoc />

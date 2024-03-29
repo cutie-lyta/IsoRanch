@@ -10,11 +10,11 @@ public class PlacedDirtBlock : BreakableBlock
     /// If there is no plant growing/grown on that block, execute the take back block routine from the BreakableBlock
     /// </summary>
     /// <param name="ctx"> The context. </param>
-    public override void Action(ActionContext ctx)
+    public override void Break(ActionContext ctx)
     {
         if (this.GetComponent<PlowedDirt>().Plant == null)
         {
-            base.Action(ctx);
+            base.Break(ctx);
         }
     }
 

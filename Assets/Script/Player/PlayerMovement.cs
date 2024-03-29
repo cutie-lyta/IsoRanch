@@ -8,17 +8,25 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
+    /// <summary>
+    /// Player's speed
+    /// </summary>
     [SerializeField]
     private float _speed = 5.0F;
 
-    private PlayerMain _main;
+    /// <summary>
+    /// The current walking direction.
+    /// </summary>
     private Vector3 _dir;
+
+    /// <summary>
+    /// A handle to the Rigidbody.
+    /// </summary>
     private Rigidbody _rb;
 
     private void Start()
     {
-        _main = GetComponent<PlayerMain>();
-        _main.InputHandler.Movement += OnMovement;
+        PlayerMain.Instance.InputHandler.Movement += OnMovement;
 
         _dir = Vector3.zero;
 

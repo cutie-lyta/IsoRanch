@@ -170,8 +170,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sounds:
     _elements:
-    - Key: plant
-      Value:
+    - <Key>k__BackingField: plant
+      <Value>k__BackingField:
         Clip: {fileID: 8300000, guid: 241279b4ad295044c930da82d3924c53, type: 3}
-        Priority: 6
-        Volume: 0.458
+        Priority: 13
+        Volume: 0.971

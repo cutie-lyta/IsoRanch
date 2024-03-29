@@ -6,14 +6,9 @@ using UnityEngine.InputSystem;
 /// </summary>
 public class PlayerHarvest : MonoBehaviour
 {
-    private PlayerMain _main;
-    private PlaceableItemBehaviour _placeable;
-
     private void Start()
     {
-        _main = GetComponent<PlayerMain>();
-        _main.InputHandler.Action += OnAction;
-        _placeable = GetComponent<PlaceableItemBehaviour>();
+        PlayerMain.Instance.InputHandler.Action += OnAction;
     }
 
     /// <summary>
@@ -25,16 +20,16 @@ public class PlayerHarvest : MonoBehaviour
     {
         if (obj.performed)
         {
-            ActionContext ctx;
+            ActionContext ctx = default;
             ctx.HeldInHand = PlayerMain.Instance.Inventory.GetHeldItem();
 
-            if (_main.Selector.IsCurrentBlockInteractable(_main.Selector.CurrentUseBlock))
+            if (PlayerMain.Instance.Selector.IsCurrentBlockInteractable(PlayerMain.Instance.Selector.CurrentUseBlock))
             {
-                _main.Selector.CurrentUseBlock.gameObject.SendMessage("Action", ctx);
+                PlayerMain.Instance.Selector.CurrentUseBlock.gameObject.SendMessage("Action", ctx);
             }
             else
             {
-                _placeable.PlaceItem(ctx);
+                PlayerMain.Instance.Placer.PlaceItem(ctx);
             }
         }
     }

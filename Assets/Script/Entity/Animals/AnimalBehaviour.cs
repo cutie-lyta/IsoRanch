@@ -5,6 +5,9 @@ using UnityEngine;
 /// </summary>
 public abstract class AnimalBehaviour : Selectable
 {
+    /// <summary>
+    /// The animal data stored.
+    /// </summary>
     [SerializeField]
     private AnimalData _data;
 
@@ -40,9 +43,11 @@ public abstract class AnimalBehaviour : Selectable
         Name = _data.Name;
         Description = _data.Description;
 
-        var rnd = Random.Range(0, 4096);
+        var rnd = Random.Range(0, 128);
+        print(rnd);
         if (rnd == 69)
         {
+            print("SHINYYYYYYYYYYYYYYYYYYYYYYYYYYY!");
             Name += " Chromatique";
             foreach (var animalRenderer in GetComponentsInChildren<MeshRenderer>())
             {

@@ -20,8 +20,6 @@ public class PlaceableItemBehaviour : MonoBehaviour
             var position = PlayerMain.Instance.Selector.CurrentUseBlock.gameObject.transform.position;
             position.y += 1;
 
-            print(transform.rotation.eulerAngles.y + 90);
-            print(Math.QuantizeAngle(transform.rotation.eulerAngles.y + 90, 4));
             float quantizedAngle = Math.QuantizeAngle(transform.rotation.eulerAngles.y + 90, 4);
 
             Instantiate(item.Block, position, Quaternion.Euler(0, quantizedAngle, 0), PlayerMain.Instance.Selector.CurrentUseBlock.gameObject.transform.parent);

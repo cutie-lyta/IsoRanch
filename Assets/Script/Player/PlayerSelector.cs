@@ -8,8 +8,14 @@ using UnityEngine;
 /// </summary>
 public class PlayerSelector : MonoBehaviour
 {
+    /// <summary>
+    /// Gets the block the player is currently standing on.
+    /// </summary>
     public Selectable CurrentStandingBlock { get; private set; }
 
+    /// <summary>
+    /// Gets the block the player is can currently use/place block on.
+    /// </summary>
     public Selectable CurrentUseBlock { get; private set; }
 
     /// <summary>
@@ -62,7 +68,7 @@ public class PlayerSelector : MonoBehaviour
             if (hit.transform.CompareTag("Selectionable") &&
                 (CurrentStandingBlock == null || CurrentStandingBlock.gameObject != hit.transform.gameObject))
             {
-                ActionContext context;
+                ActionContext context = default;
                 context.HeldInHand = PlayerMain.Instance.Inventory.GetHeldItem();
 
                 if (CurrentStandingBlock)

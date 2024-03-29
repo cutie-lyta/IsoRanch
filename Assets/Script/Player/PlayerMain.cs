@@ -45,8 +45,14 @@ public class PlayerMain : MonoBehaviour
     /// </summary>
     public PlayerHealth Health { get; private set; }
 
+    /// <summary>
+    /// Gets the handle to the player's Sound module.
+    /// </summary>
     public SoundModule SoundModule { get; private set; }
 
+    /// <summary>
+    /// Gets the handle to the block placer.
+    /// </summary>
     public PlaceableItemBehaviour Placer { get; private set; }
 
     private void Awake()

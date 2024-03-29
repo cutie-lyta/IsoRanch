@@ -5,6 +5,9 @@
 /// </summary>
 public class SlimeBehaviour : AnimalBehaviour
 {
+    /// <summary>
+    /// An handle to the Slime's rigidbody.
+    /// </summary>
     private Rigidbody _rb;
 
     /// <inheritdoc/>

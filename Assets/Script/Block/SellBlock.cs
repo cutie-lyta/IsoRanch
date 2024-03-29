@@ -11,6 +11,10 @@ public class SellBlock : Block
     /// False sell one item at a time.
     /// </summary>
     private bool _mode;
+
+    /// <summary>
+    /// A handle to the mesh renderer, to change its material.
+    /// </summary>
     private MeshRenderer _renderer;
 
     /// <summary>

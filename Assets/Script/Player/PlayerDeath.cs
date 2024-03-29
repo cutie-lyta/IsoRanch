@@ -6,8 +6,10 @@ using UnityEngine;
 /// </summary>
 public class PlayerDeath : MonoBehaviour
 {
+    /// <summary>
+    /// Contain the player's spawnpoint. When dead, the player will be teleported here
+    /// </summary>
     private Vector3 _spawnpoint;
-    private PlayerHealth _health;
 
     /// <summary>
     /// Die : Empty inventory, Take money and respawn.
@@ -27,7 +29,7 @@ public class PlayerDeath : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
-        _health.AddHealth(20);
+        PlayerMain.Instance.Health.AddHealth(20);
         this.transform.position = _spawnpoint;
     }
 
@@ -42,13 +44,12 @@ public class PlayerDeath : MonoBehaviour
         // Check death plain
         if (other.gameObject.CompareTag("Respawn"))
         {
-            _health.TakeDamage(99);
+            PlayerMain.Instance.Health.TakeDamage(99);
         }
     }
 
     private void Awake()
     {
         _spawnpoint = this.transform.position;
-        _health = GetComponent<PlayerHealth>();
     }
 }

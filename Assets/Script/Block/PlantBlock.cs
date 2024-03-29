@@ -4,6 +4,9 @@
 /// </summary>
 public class PlantBlock : Block
 {
+    /// <summary>
+    /// A cast of this block's data as a plant block data being stored.
+    /// </summary>
     private PlantBlockData _blockData;
 
     /// <summary>

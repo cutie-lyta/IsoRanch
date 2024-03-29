@@ -6,9 +6,15 @@ using UnityEngine;
 /// </summary>
 public class PlayerMoney : MonoBehaviour
 {
+    /// <summary>
+    /// Money limit for the player.
+    /// </summary>
     [SerializeField]
     private int _limit;
 
+    /// <summary>
+    /// Money text box.
+    /// </summary>
     [SerializeField]
     private TMP_Text _moneyUI;
 
@@ -18,6 +24,9 @@ public class PlayerMoney : MonoBehaviour
     [SerializeField]
     private bool _cheatMode;
 
+    /// <summary>
+    /// The current player's bank account.
+    /// </summary>
     private int _money;
 
     /// <summary>

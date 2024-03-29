@@ -6,9 +6,15 @@ using UnityEngine.InputSystem;
 /// </summary>
 public class ShopBlock : Block
 {
+    /// <summary>
+    /// An handle to the shop object.
+    /// </summary>
     [SerializeField]
     private Shop _shop;
 
+    /// <summary>
+    /// An handle to the PlayerInput Unity component.
+    /// </summary>
     private PlayerInput _input;
 
     /// <inheritdoc />

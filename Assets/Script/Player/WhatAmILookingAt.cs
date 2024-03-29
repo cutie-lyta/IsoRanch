@@ -8,9 +8,15 @@ using UnityEngine;
 /// </summary>
 public class WhatAmILookingAt : MonoBehaviour
 {
+    /// <summary>
+    /// The name's text box
+    /// </summary>
     [SerializeField]
     private TMP_Text _name;
 
+    /// <summary>
+    /// The description's text box.
+    /// </summary>
     [SerializeField]
     private TMP_Text _description;
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -9,10 +10,19 @@ using UnityEngine;
 [RequireComponent(typeof(InventorySelection))]
 public class InventoryManager : MonoBehaviour
 {
+    public event Action OnSelectionChange;
+
+    /// <summary>
+    /// A dictionary of Item and int -> The item and the amount the player possess.
+    /// </summary>
     private Dictionary<ItemData, int> _inventory = new ();
 
+    /// <summary>
+    /// Handle to the Inventory Selection component
+    /// </summary>
     private InventorySelection _selection;
-    private InventoryTextManager _textManager;
+
+    private ItemData _previouslySelected;
 
     /// <summary>
     /// Add an item to the inventory dictionnary.
@@ -34,10 +44,6 @@ public class InventoryManager : MonoBehaviour
         }
 
         _inventory.Add(item, amount);
-        if (GetHeldItem() == item)
-        {
-            _textManager.ChangeInventory();
-        }
 
         return true;
     }
@@ -93,9 +99,17 @@ public class InventoryManager : MonoBehaviour
         return null;
     }
 
+    private void FixedUpdate()
+    {
+        if (_previouslySelected != GetHeldItem())
+        {
+            _previouslySelected = GetHeldItem();
+            OnSelectionChange?.Invoke();
+        }
+    }
+
     private void Awake()
     {
         _selection = GetComponent<InventorySelection>();
-        _textManager = GetComponent<InventoryTextManager>();
     }
 }

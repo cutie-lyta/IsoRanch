@@ -7,10 +7,20 @@ using UnityEngine.UI;
 /// </summary>
 public class PlayerHealth : MonoBehaviour
 {
+    /// <summary>
+    /// The list of hearts in the UI.
+    /// </summary>
     [SerializeField]
     private List<Image> _hearts;
 
+    /// <summary>
+    /// The health of the player, should always be between 0 and 20, in normal condition.
+    /// </summary>
     private int _health = 20;
+
+    /// <summary>
+    /// A handle to the death component of the player.
+    /// </summary>
     private PlayerDeath _death;
 
     /// <summary>

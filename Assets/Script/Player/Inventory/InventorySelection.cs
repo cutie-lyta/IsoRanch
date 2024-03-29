@@ -6,8 +6,14 @@ using UnityEngine.InputSystem;
 /// </summary>
 public class InventorySelection : MonoBehaviour
 {
+    /// <summary>
+    /// An handle to the inventory text manager.
+    /// </summary>
     private InventoryTextManager _textManager;
 
+    /// <summary>
+    /// Gets the currently selected item.
+    /// </summary>
     public int Selected { get; private set; }
 
     private void Start()
@@ -36,8 +42,6 @@ public class InventorySelection : MonoBehaviour
             {
                 Selected = 8;
             }
-
-            _textManager.ChangeInventory();
         }
     }
 }

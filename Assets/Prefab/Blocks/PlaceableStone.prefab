@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5909369424059319553}
   - component: {fileID: 8824200264733606019}
   - component: {fileID: 2195949409395044057}
-  - component: {fileID: 3841307972049890377}
+  - component: {fileID: 6809153976474295126}
   m_Layer: 0
   m_Name: PlaceableStone
   m_TagString: Selectionable
@@ -108,7 +108,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3841307972049890377
+--- !u!114 &6809153976474295126
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3722839745099391031}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e04bfdf481de2cf40a190118f9d5e1c4, type: 3}
+  m_Script: {fileID: 11500000, guid: c6282a22fe214fdf89822b830216fe82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   <Data>k__BackingField: {fileID: 11400000, guid: fa81d29d609c2674d8f34c4deb672369, type: 2}
